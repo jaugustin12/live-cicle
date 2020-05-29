@@ -1,0 +1,60 @@
+<div id ="body-container">
+  <app-navbar></app-navbar>
+  <br>
+  </div>
+    <table *ngIf= "userDetails" class="table-fill">
+      <thead>
+        <tr>
+          <th colspan="2" class="text-center">User Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>First Name</td>
+          <td>{{userDetails.fullName.split(' ')[0]}}</td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td>{{userDetails.fullName.split(' ')[1]}}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{userDetails.email}}</td>
+        </tr>
+        <td>Posts</td>
+        <td>{{userDetails.posts.userPosts.length}}</td>
+        <tr>
+          <td colspan="2" class="text-center">
+            <input mat-raised-button color="basic" type="button" (click) ="logout()" value="Logout"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      <swiper fxFlex="auto" [config]="config">
+          <div *ngFor="let event of posts" class="swiper-slide cursor-pointer">
+              <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill class="mx-2">
+                  <!-- Your content goes here -->
+                  <mat-card class="example-card">
+                      <mat-card-header>
+                        <img src="{{event.image}}" style="max-width:30%;max-height:35%;">
+                        <mat-card-title>{{event.eventName}}</mat-card-title>
+                        <mat-card-subtitle>{{event.startDate}}</mat-card-subtitle>
+                        <mat-card-subtitle>{{event.venue}} <br>
+                          {{event.location}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                          <p>{{event.promoter}}</p>
+                          <p>{{event.info}}</p>
+                          <hr>
+                          <p *ngIf="event.price">$ {{event.price}}</p>
+                          <button *ngIf="event.url"mat-raised-button color="basic">
+                            <a href="{{event.url}}" class="btn btn-default">Buy Ticket</a>
+                          </button>
+                      </mat-card-content>
+                    </mat-card>
+                </div>
+              </div>
+          </swiper>
+<!--       <button (click)="follow(email)" class="btn btn-primary">Follow {{email}}</button> --> <!-- (click)="followUser()" -->
+

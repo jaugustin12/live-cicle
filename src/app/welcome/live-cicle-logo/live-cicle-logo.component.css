@@ -1,0 +1,16 @@
+#liveciclelogo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 39vh;
+  height: 39vh;
+  background: url('../../../assets/images/pulse.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 26vh 26vh !important;
+  background-position: 50% 50% !important;
+  animation: expand 4s linear infinite;
+}
+@keyframes expand{
+  0% {background-size: 26vh 26vh;}
+  100% { background-size: 39vh 39vh;}
+}

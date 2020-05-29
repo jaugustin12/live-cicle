@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Person</title>
+  <desc>A flat styled icon from Orion Icon Library.</desc>
+  <circle data-name="layer1"
+  cx="32" cy="11" r="7" fill="#c8daf8"></circle>
+  <path data-name="layer1" d="M43 22h-5l-6 10-6-10h-5a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h3v15a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V44h3a3 3 0 0 0 3-3V25a3 3 0 0 0-3-3z"
+  fill="#c8daf8"></path>
+  <path data-name="opacity" d="M32 4a7 7 0 0 0 0 14zm0 28l-6-10h-5a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h3v15a3 3 0 0 0 3 3h5z"
+  fill="#000064" opacity=".15"></path>
+</svg>

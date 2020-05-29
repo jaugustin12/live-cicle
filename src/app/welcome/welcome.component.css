@@ -1,0 +1,57 @@
+@font-face{
+  src: url(../../fonts/Jacques_Francois_Shadow/JacquesFrancoisShadow-Regular.ttf);
+  font-family: 'Jacques Francois Shadow';
+}
+
+.btn-primary{
+  background-color: rgb(117, 224, 243);
+  border-color:  rgb(117, 224, 243);
+}
+h1{
+  text-align: center;
+  position: sticky;
+  color: rgba(20, 136, 238, 0.23);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 8vw;
+}
+h4{
+  text-align: center;
+  padding-top: 3%;
+  position: sticky;
+  color: rgb(102, 102, 102);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2vw;
+}
+#enterButton{
+  padding-top: 5%;
+  text-align: center;
+  z-index: 50;
+}
+body{
+  background-color: aliceblue;
+}
+app-live-cicle-logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  top: 18vh;
+  position: relative;
+  z-index: 14;
+}
+#logoContainer{
+  align-content: center;
+}
+
+app-background {
+  bottom: 0 !important;
+  position: absolute;
+  pointer-events: none;
+}
+
+.example-margin {
+  width: 60%;
+  margin: 1% 20% 0%;
+}
+h5 {
+  color: rgb(144, 143, 143);
+}

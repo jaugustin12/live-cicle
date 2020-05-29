@@ -1,0 +1,10 @@
+<div *ngFor= "let post of posts">
+  <p>{{post.eventName}} </p>
+   <p>{{post.eventLocation}}</p>
+   <p>{{post.eventDateFrom}}</p>
+   <p>{{post.eventDateUntil}}</p>
+   <p>{{post.eventDescr}}</p>
+   <p>{{post.responsible}}</p>
+</div>
+<button (click)="follow(email)" class="btn btn-primary">Follow {{email}}</button> <!-- (click)="followUser()" -->
+

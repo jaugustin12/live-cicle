@@ -1,0 +1,108 @@
+#menubar{
+  position: fixed;
+  display: block;
+  margin-top: 70vh;
+  z-index: 1001;
+}
+mat-drawer {
+  width: 20vw;
+  border-style: inset;
+  border-width: 0.2vh 0.2vw;
+  border-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  z-index: 500;
+  position: fixed;
+  height: 70vh;
+  margin-top: 25vh;
+}
+@media only screen and (max-width: 900px) {
+  mat-drawer {
+    width: 45vw;
+  }
+}
+/* app-navbar{
+  background-color: rgba(131, 172, 255, 0.285);
+}
+ */
+app-event-form{
+  position: fixed;
+  z-index: 300;
+  margin-top: 17%;
+  margin-left: 25%;
+}
+
+@media only screen and (max-width: 900px) {
+  app-event-form {
+    margin-top: 0%;
+    margin-left: 0%;
+  }
+}
+
+#sidenavObj{
+  padding: 1.75vh 0vh;
+  text-align: center;
+  border-width: 1px;
+}
+
+
+.svg-icon {
+  width: 4vh;
+  height: 3vw;
+}
+
+#menu{
+  width: 10vw;
+  height: 10vh;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #f6f6f6;
+}
+
+.svg-icon circle {
+  stroke: #8d8d8d;
+  stroke-width: 1;
+}
+
+#body-container{
+  background-color: rgba(78, 175, 255, 0.477);
+  width: 100vw;
+  height: 100vh;
+}
+app-navbar{
+  z-index: 5;
+}
+mat-drawer{
+  background-color: rgba(39, 39, 39, 0.285);
+}
+
+#place{
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: block;
+}
+.form-group{
+  margin-bottom: 0px;
+}
+app-event-card{
+  position: fixed;
+  margin-top: 25vh;
+  right: 1%;
+  width: 45%;
+  height: 60%;
+  z-index: 2799;
+  overflow: scroll;
+}
+app-google-maps{
+  position: fixed;
+}
+
+#retry {
+  position: fixed;
+  z-index: 200;
+  margin-top: 40vh;
+  margin-left: 50vw;
+}

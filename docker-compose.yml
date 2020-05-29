@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  live-cicle:
+    image: live-cicle
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4200:4200

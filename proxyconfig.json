@@ -1,0 +1,7 @@
+{
+  "/proxy/*": {
+    "target": "http://localhost:1234/proxy",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

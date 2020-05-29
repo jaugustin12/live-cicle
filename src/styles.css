@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~swiper/css/swiper.min.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { margin:0; padding:0; overflow:hidden }
+#glass {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 1000;
+  pointer-events: none;
+}
+#attraction-panel {
+  display:none;
+}
+@media only screen and (max-width: 900px) {
+  #glass {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 1000;
+    pointer-events: none;
+    -webkit-transform:rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+#body-container-1{
+  background-color: rgba(90, 180, 249, 0.052);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+#body-container-2{
+  background-color: rgba(0, 0, 0, 0.935);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+#body-container-3{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 12;
+}
+main {
+
+}

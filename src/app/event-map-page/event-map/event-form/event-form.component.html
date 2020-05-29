@@ -1,0 +1,75 @@
+
+  <div class="card">
+   <div class="exit-container">
+     <button mat-raised-button color="primary" id="exit" (click)="toggleEventForm()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/>
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+      </svg>
+    </button>
+   </div>
+   <mat-horizontal-stepper [linear]="isLinear" #stepper>
+     <mat-step [stepControl]="firstFormGroup">
+       <form [formGroup]="firstFormGroup">
+         <ng-template matStepLabel>Fill out your event details</ng-template>
+         <mat-form-field>
+           <input matInput ngModel placeholder="Event Name" formControlName="eventName" required #eventName>
+         </mat-form-field>
+         <br>
+         <mat-form-field>
+           <input matInput #eventLocation ngModel placeholder="Event Location" formControlName="eventLocation" required type="text" id= "place">
+         </mat-form-field>
+
+<!--          <mat-form-field>
+          Public
+         <mat-slide-toggle ngModel formControlName="eventPublic" #eventPublic (click)="togglePublic()"
+         id= "public" color="primary" [checked]= "eventPublic" matTooltip="Making this public will show on the event map" matTooltipPosition="below">
+         </mat-slide-toggle> --><!-- [(ngModel)]="eventPublic" -->
+<!--         </mat-form-field> -->
+         <hr>
+         <div>
+           <button id="nextButton" mat-button matStepperNext>Next</button>
+         </div>
+       </form>
+     </mat-step>
+     <mat-step [stepControl]="secondFormGroup">
+       <form [formGroup]="secondFormGroup">
+         <ng-template matStepLabel>When is it?</ng-template>
+         <mat-form-field style="width: 45%;">
+           <input matInput placeholder="From" type='datetime-local' formControlName="eventDateFrom" required #eventDateFrom>
+         </mat-form-field>
+         <br>
+         <mat-form-field style="width: 45%;">
+           <input matInput placeholder="Until" type='datetime-local' formControlName="eventDateUntil" required #eventDateUntil>
+         </mat-form-field>
+         <hr>
+         <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button id="nextButton" mat-button matStepperNext >
+              Next
+            </button>
+        </div>
+       </form>
+     </mat-step>
+     <mat-step [stepControl]="lastFormGroup">
+       <form [formGroup]="lastFormGroup">
+         <ng-template matStepLabel>Last details</ng-template>
+
+           <mat-form-field style="width: 40px;">
+              <span matPrefix>$ &nbsp;</span>
+             <input matInput placeholder="Price" formControlName="price" #price>
+           </mat-form-field>
+
+           <mat-form-field>
+               <textarea matInput rows="6" placeholder="Description" formControlName="eventDescr" #eventDescr></textarea>
+           </mat-form-field>
+         <hr>
+         <div>
+           <button mat-button matStepperPrevious>Back</button>
+           <button mat-button (click)="addEvent(eventName.value, eventLocation.value, eventLat, eventLng, eventDateFrom.value, eventDateUntil.value, eventDescr.value, price.value)"
+           type="submit" [disabled]="lastFormGroup.invalid"> Submit
+          </button>
+         </div>
+       </form>
+     </mat-step>
+   </mat-horizontal-stepper>
+ </div>

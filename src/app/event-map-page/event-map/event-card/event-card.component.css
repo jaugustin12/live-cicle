@@ -1,0 +1,37 @@
+mat-card{
+  background-color: rgba(151, 151, 151, 0.477);
+  height: 100%;
+  border-style: inset;
+  border-radius: 6px;
+}
+h1 {
+  font-size: 2vh;
+}
+h3 {
+  font-size: 1vh;
+}
+mat-card-subtitle{
+  color: aliceblue;
+}
+mat-card-title {
+  color: navy;
+}
+p{
+  color: navy;
+}
+#inline {
+  align-self: flex-start;
+  position: relative;
+  object-fit: contain;
+  display: block;
+}
+#exit{
+  position: absolute;
+  opacity: .75;
+  top: 0;
+  z-index: 24;
+  padding: 0;
+  min-width: 20px;
+  float: right;
+  display: block;
+}

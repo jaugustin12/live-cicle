@@ -1,0 +1,47 @@
+<img id="nav-logo" [src]="liveCicleLogo">
+
+<button mat-fab color="basic" (click)="toogleSideMenu()" id="closeSidebar" class="btn btn-primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="none" d="M0 0h24v24H0V0z"/>
+      <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"/>
+    </svg>
+</button>
+
+<form class="example-form" #signInForm= "ngForm" (ngSubmit)= "signInForm.valid && onSubmit(signInForm)">
+  <div class="username-container">
+    <mat-form-field class="example-full-width username-password">
+      <input [pattern]="emailRegex" type="email" name="email" #email= "ngModel"
+       [(ngModel)]="model.email" id="input" matInput placeholder="Username"
+       required [ngClass]= "{'invalid-textbox' :signInForm.submitted && !email.valid }">
+
+        <div *ngIf="signInForm.submitted && email.errors?.pattern">
+          <label class="validation-message"> Invalid email address. </label>
+        </div>
+    </mat-form-field>
+
+  <br>
+
+  <div class="password-container">
+    <mat-form-field class="example-full-width username-password">
+      <input autocomplete="on" type="password" name="password" #password="ngModel" [(ngModel)]= "model.password"
+      matInput placeholder="Password" aria-label="State" required minlength="6"
+      [ngClass]= "{'invalid-textbox' :signInForm.submitted && !password.valid }">
+
+        <div *ngIf="signInForm.submitted && password.errors?.pattern">
+          <label class="validation-message"> Minimum 6 characters </label>
+        </div>
+    </mat-form-field>
+  </div>
+
+  <div class="alert" *ngIf= "serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+
+<br>
+  <div class="login-signup">
+    <button *ngIf = "loggedIn == false" mat-raised-button color="basic" >Login</button>
+    <button *ngIf = "loggedIn == true" (click) ="logout()" mat-raised-button color="basic" >Log out</button>
+    <br>
+    <button *ngIf = "loggedIn == false" id="signup-button" mat-raised-button color="basic" [routerLink]= "['/user']">Sign Up</button>
+  </div>
+

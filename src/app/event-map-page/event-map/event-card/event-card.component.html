@@ -1,0 +1,28 @@
+<button mat-raised-button color="basic" id="exit" (click)="toggleEventCard()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/>
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+    </svg>
+  </button>
+  <div *ngFor="let tsClickedCluster of tsClickedClusters">
+    <mat-card class="example-card" id="event-card">
+      <mat-card-header>
+          <span id="inline">
+              <img src="{{tsClickedCluster.image}}" style="max-width:100px; max-height:100px;">
+          </span>
+          <br>
+        <mat-card-title id="inline">{{tsClickedCluster.eventName}}</mat-card-title>
+        <mat-card-subtitle id="inline">{{tsClickedCluster.startDate}}</mat-card-subtitle>
+        <mat-card-subtitle id="inline">{{tsClickedCluster.venue}} <br>
+          {{tsClickedCluster.location}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <p>{{tsClickedCluster.promoter}}</p>
+          <p>{{tsClickedCluster.info}}</p>
+          <hr>
+          <p>$ {{tsClickedCluster.price}}</p>
+          <button  mat-raised-button color="basic">
+            <a href="{{tsClickedCluster.url}}" class="btn btn-default">Buy Ticket</a>
+          </button>
+      </mat-card-content>
+    </mat-card>
+  </div>

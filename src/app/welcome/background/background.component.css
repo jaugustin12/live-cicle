@@ -1,0 +1,17 @@
+#homebackground{
+  width: 100%;
+  height: 15%;
+/*   margin-left: auto;
+  margin-right: auto; */
+/*   text-align: center; */
+  z-index: 0;
+  background: url('../../../assets/images/lcpolkadots.png') !important;
+  animation: sparkle_animation 45s linear infinite;
+  border-style: none;
+  pointer-events: none;
+}
+@keyframes sparkle_animation{
+  100%{background-position: 0 0;}
+  0%{background-position: 0 150px;}
+
+}

@@ -1,0 +1,50 @@
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 25vw;
+  transition: all .5s;
+  top: 0;
+  bottom: 0;
+  right: -25vw;
+  z-index: 10;
+  background-color: rgba(33, 33, 33, 0.394);
+ }
+
+ .sidebar.show{
+  right: 0;
+ }
+
+#closeSidebar {
+  top: 25vh;
+  border-style: none;
+  position: fixed;
+  z-index: 20;
+  line-height: 0px;
+  padding: 1vh;
+}
+#nav-logo{
+  width: 26vh;
+  height: 26vh;
+  display: block;
+  margin: 5vh auto;
+}
+.username-container {
+  text-align: center;
+}
+.username-password{
+  position: relative;
+  top: 6vh;
+  margin-top: 10%  !important;
+  display: inline-block;
+}
+.password-container {
+  text-align: center;
+}
+.login-signup {
+  text-align: center;
+  position: absolute;
+  height: 80vh;
+}
+#signup-button{
+  margin-top: 10%;
+}
