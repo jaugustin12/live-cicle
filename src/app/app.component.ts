@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {slider, transformer, fader, stepper } from './route-animations';
 import { SwUpdate } from '@angular/service-worker';
-import { Data2Service } from '../services/data2Service/data2.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,7 @@ export class AppComponent {
   title = 'LiveCicle';
   update = false;
 
-  constructor(updates: SwUpdate, private data2: Data2Service) {
+  constructor(updates: SwUpdate) {
     updates.available.subscribe(event => {
 
     updates.activateUpdate().then(() => document.location.reload());

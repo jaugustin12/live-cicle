@@ -27,7 +27,6 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import {environment} from '../environments/environment';
 import { UserService } from '../services/userService/user.service';
-import { Data2Service } from '../services/data2Service/data2.service';
 import { SignIn2Component } from './user/sign-in2/sign-in2.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { AuthInterceptor} from '../auth/auth.interceptor';
@@ -117,7 +116,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     },
     AuthGuard,
     UserService,
-    Data2Service,
     DataService
   ],
     bootstrap: [AppComponent]

@@ -10,6 +10,13 @@ import { MatButtonModule, MatMenuModule, MatIconModule, MatCardModule, MatSteppe
    MatToolbarModule, MatAutocompleteModule, MatProgressBarModule } from '@angular/material';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor} from '../../auth/auth.interceptor';
+import { AuthGuard } from '../../auth/auth.guard';
+import { UserService } from '../../services/userService/user.service';
+import {DataService} from '../../services/dataService/data.service';
+import { EventService } from '../../services/eventService/event.service';
+import { TicketMasterService } from '../../services/tmService/ticket-master.service';
 
 @NgModule({
   declarations: [EventMapPageComponent, EventCardComponent, EventFormComponent],
@@ -26,6 +33,21 @@ import { ReactiveFormsModule} from '@angular/forms';
     MatStepperModule,
     MatButtonModule,
     MatInputModule
-  ]
+  ],
+  providers: [
+    {
+      provide:
+        HTTP_INTERCEPTORS
+      ,
+
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    AuthGuard,
+    UserService,
+    DataService,
+    EventService,
+    TicketMasterService
+  ],
 })
 export class EventMapPageModule { }

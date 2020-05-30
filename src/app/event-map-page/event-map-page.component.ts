@@ -16,7 +16,6 @@ import { Event } from '../../models/event.model';
 import { TmEvent } from '../../models/tmEvent/tm-event.model';
 declare var MarkerClusterer: any;
 import { forkJoin } from 'rxjs';
-import { GoogleService } from '../../services/googleService/google.service';
 import { TicketMasterService } from '../../services/tmService/ticket-master.service';
 import { async } from 'q';
 
@@ -72,7 +71,6 @@ export class EventMapPageComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private tmService: TicketMasterService,
     private eventService: EventService,
-    private googleService: GoogleService,
     private spinner: NgxSpinnerService,
     private data: DataService,
     private mapsAPILoader: MapsAPILoader,

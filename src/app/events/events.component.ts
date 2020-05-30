@@ -1,11 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 
-import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
-  SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
+import {
+  SwiperComponent, SwiperDirective, SwiperConfigInterface,
+  SwiperScrollbarInterface, SwiperPaginationInterface
+} from 'ngx-swiper-wrapper';
 
-  import { NgxSpinnerService } from 'ngx-spinner';
-  import { GoogleService } from '../../services/googleService/google.service';
-  import { TicketMasterService } from '../../services/tmService/ticket-master.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { DataService } from '../../services/dataService/data.service';
 import { EventService } from '../../services/eventService/event.service';
 
@@ -16,7 +16,7 @@ import { EventService } from '../../services/eventService/event.service';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit, OnDestroy {
   tmEvents: any = [];
   tmEventNames: any = [];
   tmStartDates: any = [];
@@ -70,38 +70,34 @@ export class EventsComponent {
 
   constructor(
     private spinner: NgxSpinnerService,
-    private tmService: TicketMasterService,
     private data: DataService,
     private eventService: EventService,
-    private googleService: GoogleService,
   ) {
   }
   @ViewChild(SwiperComponent) componentRef?: SwiperComponent;
   @ViewChild(SwiperDirective) directiveRef?: SwiperDirective;
-  ngOnChanges() {
 
-  }
   ngOnInit() {
-         this.spinner.show().then( async () => {
-          this.data.currentProgress.subscribe(progress => this.progress = progress);
-          await this.eventService.fetchEvents();
-          }).then(async () => {
-            this.directiveRef.update();
-            this.data.totalShuffledEvents.subscribe(shuffle => this.totalEvents = shuffle);
-          }).then(() => {
-            this.spinner.hide();
-            window.resizeBy(0.1, 0.1);
-          });
-     }
+    this.spinner.show().then(async () => {
+      this.data.currentProgress.subscribe(progress => this.progress = progress);
+      await this.eventService.fetchEvents();
+    }).then(async () => {
+      this.directiveRef.update();
+      this.data.totalShuffledEvents.subscribe(shuffle => this.totalEvents = shuffle);
+    }).then(() => {
+      this.spinner.hide();
+      window.resizeBy(0.1, 0.1);
+    });
+  }
 
 
-      ngOnDestroy() {
-        this.data.tmEvents.subscribe(tmEvents => (this.tmEvents = tmEvents)).unsubscribe();
-      }
+  ngOnDestroy() {
+    this.data.tmEvents.subscribe(tmEvents => (this.tmEvents = tmEvents)).unsubscribe();
+  }
 
-      toggleNav() {
-        this.showNav = !this.showNav;
-      }
+  toggleNav() {
+    this.showNav = !this.showNav;
+  }
 
   public toggleKeyboardControl(): void {
     this.config.keyboard = !this.config.keyboard;
