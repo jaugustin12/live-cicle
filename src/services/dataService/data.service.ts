@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Latlong } from '../../models/latlong.model';
-import { TmEvent } from '../../models/tmEvent/tm-event.model';
 
 @Injectable({
   providedIn: 'root'
