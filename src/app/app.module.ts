@@ -42,6 +42,7 @@ import {DataService} from '../services/dataService/data.service';
 import {FileUploadModule} from 'ng2-file-upload';
 import {NavbarModule} from './navbar/navbar.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {AuthService} from '../services/authService/auth.service';
 
 
 /* import { Angular2UsefulSwiperModule } from 'angular2-useful-swiper'; */
@@ -114,6 +115,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       useClass: AuthInterceptor,
       multi: true
     },
+    AuthService,
     AuthGuard,
     UserService,
     DataService

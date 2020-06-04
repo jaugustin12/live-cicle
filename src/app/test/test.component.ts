@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GoogleService } from '../../services/googleService/google.service';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
@@ -51,5 +50,4 @@ export class TestComponent {
 
   go() {
   }
-  constructor(private googleService: GoogleService) {}
 }

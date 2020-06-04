@@ -5,10 +5,9 @@
 export const environment = {
   production: false,
   googleMapsAPIkey: 'AIzaSyBRs7NRGpboLvwqN9zqFZiuhCXqe9URYBQ',
-  apiBaseUrl: 'https://livecicle-be.azurewebsites.net/api'
+  apiBaseUrl: 'http://localhost:8081/api'
 };
 
-/*http://localhost:8080/api*/
 
 /*
  * For easier debugging in development mode, you can import the following file

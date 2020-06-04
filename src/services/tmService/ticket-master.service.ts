@@ -3,11 +3,9 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { DataService } from '../../services/dataService/data.service';
 import { TmEvent } from '../../models/tmEvent/tm-event.model';
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'platform'
 })
-
 export class TicketMasterService {
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True'})};
   private readonly TM_EVENTS = 'TM_EVENTS';
