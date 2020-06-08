@@ -6,9 +6,7 @@ import { Event } from '../../models/event.model';
 import {TicketMasterService} from '../tmService/ticket-master.service';
 import geohash from 'latlon-geohash';
 
-@Injectable({
-  providedIn: 'platform'
-})
+@Injectable()
 
 export class EventService {
   events: Event[];
